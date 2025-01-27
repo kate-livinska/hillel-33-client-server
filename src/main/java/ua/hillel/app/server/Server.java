@@ -1,5 +1,6 @@
 package ua.hillel.app.server;
 
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import ua.hillel.app.client.Connection;
 
@@ -12,6 +13,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Data
 @Slf4j
 public class Server implements ConnectionHandler, AutoCloseable{
     private final List<Connection> activeConnections;
