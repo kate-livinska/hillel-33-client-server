@@ -16,7 +16,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
-public class ConnectionTest {
+class ConnectionTest {
     private Connection connection;
 
     @Mock
@@ -73,6 +73,7 @@ public class ConnectionTest {
 
         connection.run();
 
+        verify(serverMock, times(1)).onMessage(any(), anyString());
         assertTrue(testOut.toString().contains(actualEcho));
     }
 }
